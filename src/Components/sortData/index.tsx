@@ -20,10 +20,15 @@ const SortData = () => {
 
     const sortPeople = () => {
         const sorted = [...people].sort((a, b) => {
-            console.log("a value", a);
-            console.log("b value", b);
             if (a.name < b.name) return -1;
             if (a.name > b.name) return 1;
+            return 0;
+        });
+        setSortedPeople(sorted);
+    };
+
+    const sortAge = () => {
+        const sorted = [...people].sort((a, b) => {
             if (a.age < b.age) return -1;
             if (a.age > b.age) return 1;
             return 0;
@@ -34,7 +39,8 @@ const SortData = () => {
     return (
         <div>
             <h1>Sorted People</h1>
-            <button onClick={sortPeople}>Sort by Name and Age</button>
+            <button onClick={sortPeople}>Sort by Name</button>
+            <button onClick={sortAge}>Sort by Age</button>
             <ul>
                 {sortedPeople.map((person, index) => {
                     return (
