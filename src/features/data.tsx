@@ -20,11 +20,19 @@ export const dataSlice = createSlice({
         getData: (state, action) => {
             console.log('state', state);
             state.value = action.payload
+        },
+        sortByName: (state) => {
+          let sortState =  state.value.sort((a:any, b:any) => a.name.localeCompare(b.name))
+            state.value = sortState;
+        },
+        sortByAge: (state) => {
+            let sortState =  state.value.sort((a:any, b:any) => a.age - b.age)
+            state.value = sortState;
         }
 
     }
 });
 
-export const { getData } = dataSlice.actions;
+export const { getData, sortByName, sortByAge } = dataSlice.actions;
 
 export default dataSlice.reducer;

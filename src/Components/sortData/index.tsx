@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
+import { sortByName,sortByAge } from '../../features/data';
 
 
 interface Person {
@@ -12,28 +13,36 @@ const SortData = () => {
 
     const peoples = useSelector((state:any) => state.user.value)
 
-    console.log("peoples",peoples);
+    const dispatch = useDispatch();
 
     const people: Person[] = peoples;
 
     const [sortedPeople, setSortedPeople] = useState<Person[]>(people);
 
+    useEffect(() => {
+        setSortedPeople(people);
+    }, [people]);
+
+
     const sortPeople = () => {
-        const sorted = [...people].sort((a, b) => {
-            if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
-            return 0;
-        });
-        setSortedPeople(sorted);
+        dispatch(sortByName());
+        // setSortedPeople(sortedData);
+        // const sorted = [...people].sort((a, b) => {
+        //     if (a.name < b.name) return -1;
+        //     if (a.name > b.name) return 1;
+        //     return 0;
+        // });
+        // setSortedPeople(sorted);
     };
 
     const sortAge = () => {
-        const sorted = [...people].sort((a, b) => {
-            if (a.age < b.age) return -1;
-            if (a.age > b.age) return 1;
-            return 0;
-        });
-        setSortedPeople(sorted);
+        dispatch(sortByAge());
+        // const sorted = [...people].sort((a, b) => {
+        //     if (a.age < b.age) return -1;
+        //     if (a.age > b.age) return 1;
+        //     return 0;
+        // });
+        // setSortedPeople(sorted);
     };
 
     return (
