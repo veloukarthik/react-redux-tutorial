@@ -7,6 +7,8 @@ import NotFound from './Components/404';
 import Reducer from './hooks/Reducer';
 import Context from './hooks/Context';
 import Weather from './Components/weather';
+import Memos from './hooks/Memos'
+import CallbacksHook from './hooks/CallbacksHook';
 
 
 function App() {
@@ -34,6 +36,14 @@ function App() {
     { 
         path:'/weather',
         Component:Weather
+    },
+    {
+      path:'/memos',
+      Component:Memos
+    },
+    {
+      path:'/callbacks',
+      Component:CallbacksHook
     },
     {
       path:'*',
