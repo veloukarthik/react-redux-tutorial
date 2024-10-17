@@ -9,6 +9,8 @@ import Context from './hooks/Context';
 import Weather from './Components/weather';
 import Memos from './hooks/Memos'
 import CallbacksHook from './hooks/CallbacksHook';
+import Occurence from './hooks/Occurence';
+import Wrapper from './HOC/Wrapper';
 
 
 function App() {
@@ -46,6 +48,10 @@ function App() {
       Component:CallbacksHook
     },
     {
+      path:'/occurence',
+      Component:Occurence
+    },
+    {
       path:'*',
       Component:NotFound    
     }
@@ -58,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default Wrapper(App);
