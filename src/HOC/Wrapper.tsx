@@ -3,7 +3,7 @@ import React from 'react'
 function Wrapper(Component: any) {
     return function HOC(props: any) {
 
-        const isAuthenticate = false;
+        const isAuthenticate = true;
 
         if(!isAuthenticate){
             return <h1>You are not authenticated</h1>
