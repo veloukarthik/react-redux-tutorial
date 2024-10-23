@@ -11,7 +11,8 @@ import Memos from './hooks/Memos'
 import CallbacksHook from './hooks/CallbacksHook';
 import Occurence from './hooks/Occurence';
 import Wrapper from './HOC/Wrapper';
-
+import MyClass from './Components/MyClass';
+import PureClass from './Components/PureClass';
 
 function App() {
   const [count,setCount] = useState(0);
@@ -50,6 +51,14 @@ function App() {
     {
       path:'/occurence',
       Component:Occurence
+    },
+    {
+      path:'myclass',
+      Component:MyClass
+    },
+    {
+      path:'pureclass',
+      Component:PureClass
     },
     {
       path:'*',
