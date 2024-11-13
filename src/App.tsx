@@ -13,7 +13,7 @@ import Occurence from './hooks/Occurence';
 import Wrapper from './HOC/Wrapper';
 import MyClass from './Components/MyClass';
 import PureClass from './Components/PureClass';
-
+import Layout from './hooks/Layout';
 function App() {
   const [count,setCount] = useState(0);
 
@@ -59,6 +59,10 @@ function App() {
     {
       path:'pureclass',
       Component:PureClass
+    },
+    {
+      path:'layout',
+      Component:Layout
     },
     {
       path:'*',

@@ -19,8 +19,8 @@ function Reducer() {
     return (
         <div>
             <p>Count: {state.count}</p>
-            <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-            <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
+            <button onClick={() => dispatch({ type: 'increment' })}>Increment</button>
+            <button onClick={() => dispatch({ type: 'decrement' })}>Decrement</button>
         </div>
     );
 }
